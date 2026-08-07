@@ -10,14 +10,16 @@
 
 body{
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #f7f7f7;
+    color: #222;
 }
 
 /* Header */
 
 .header{
-    background-color: #111;
+    background-color: #90c0e2;
     padding: 18px 60px;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 /* Container */
@@ -31,137 +33,167 @@ body{
 /* Logo */
 
 .logo h1{
-    color: white;
-    font-size: 32px;
+    color: #f42731;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.logo h1::after{
+    content: ".";
+    color: royalblue;
 }
 
 /* Navigation */
 
 .nav ul{
-    display: flex;
-    list-style: none;
-    gap: 30px;
+    display:flex;
+    list-style:none;
+    gap:35px;
 }
 
 .nav ul li a{
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    transition: 0.3s;
+    text-decoration:none;
+    color:#555;
+    font-size:16px;
+    transition:.3s;
 }
 
 .nav ul li a:hover{
-    color: rgb(255, 0, 38);
+    color:#fa0404;
 }
 
 /* Search Box */
 
 .search-box{
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 25px;
-    padding: 8px 15px;
-    width: 250px;
+    display:flex;
+    align-items:center;
+    background:#f2f2f2;
+    border-radius:25px;
+    padding:8px 15px;
+    width:200px;
 }
 
 .search-box span{
-    font-size: 18px;
-    color: gray;
-    margin-right: 10px;
+    margin-right:8px;
 }
 
 .search-box input{
-    border: none;
-    outline: none;
-    font-size: 16px;
-    width: 100%;
+    width:100%;
+    border:none;
+    outline:none;
+    background:transparent;
 }
 
 /* Cart & User Icons */
 .cart-icon button,
 .user-icon button{
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    transition: 0.3s;
+    background:none;
+    border:none;
+    font-size:22px;
+    cursor:pointer;
 }
 
 .cart-icon button:hover,
 .user-icon button:hover{
-    color: rgb(250, 6, 6);
+    color:#ff0000;
 }
 
 /* Main Section */
 
-main {
-    width: 100%;
-    height: calc(100vh - 80px); 
-    display: flex;
-    align-items: center;
-    background: #f5f5f5;
-    overflow: hidden;
+main{
+    width:100%;
+    overflow:hidden;
 }
 
 /* Hero */
 
-.hero {
-    width: 100%;
+.hero{
+    padding:40px 60px;
+    min-height:70vh;
+    display:flex;
+    align-items:center;
 }
 
-.hero .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
+.hero .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
 }
 
 /* Left Side */
 
-.left {
-    flex: 1;
+.left{
+    flex:1;
 }
 
-.left h1 {
-    font-size: 55px;
-    color: #222;
-    margin-bottom: 20px;
+.left h1{
+    font-size:60px;
+    line-height:1.1;
+    margin-bottom:20px;
 }
 
-.left p {
-    font-size: 18px;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 30px;
+.left p{
+    font-size:18px;
+    color:#666;
+    width:80%;
+    margin-bottom:35px;
 }
 
-.btn {
-    display: inline-block;
-    text-decoration: none;
-    background-color: #111;
-    color: #fff;
-    padding: 14px 30px;
-    border-radius: 8px;
-    font-size: 18px;
-    transition: 0.3s;
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:#222;
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    transition:.3s;
 }
 
-.btn:hover {
-    background-color: #444;
+.btn:hover{
+    background:#ff0000;
 }
 
 /* Right Side */
 
-.right {
-    flex: 1;
-    text-align: center;
+.right{
+    flex:1;
+    display:flex;
+    justify-content:center;
 }
 
-.right img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.right img{
+    width:350px;
+    height:250px;
+    max-width:100%;
+    border-radius:20px;
+    box-shadow:none;
+    margin-top:0;
+}
+
+/* services-overview */
+
+.services{
+    background:#90c0e2;
+    padding:25px 0;
+}
+
+.services .container{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.services .container div{
+    text-align:center;
+    color:white;
+}
+
+.services h2{
+    font-size:20px;
+    margin-bottom:5px;
+}
+
+.services p{
+    font-size:18px;
 }
