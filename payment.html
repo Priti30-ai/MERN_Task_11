@@ -1,65 +1,101 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>Payment - Thala 7 Sneaker Store</title>
+
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
 
-        <!-- Header -->
+        <!-- HEADER -->
+
         <header class="header">
 
             <div class="container">
 
                 <!-- Logo -->
+
                 <div class="logo">
                     <h1>Thala-7</h1>
                 </div>
 
                 <!-- Navigation -->
+
                 <nav class="nav">
+
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="product.html">Product</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                        <li><a href="payment.html">Payment</a></li>
+
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="product.html">Product</a>
+                        </li>
+
+                        <li>
+                            <a href="cart.html">Cart</a>
+                        </li>
+
+                        <li>
+                            <a href="payment.html">Payment</a>
+                        </li>
+
                     </ul>
+
                 </nav>
 
-                <!-- Search Box -->
+                <!-- Search -->
+
                 <div class="search-box">
+
                     <span>🔍</span>
-                    <input type="text" placeholder="Search">
+
+                    <input
+                        type="text"
+                        placeholder="Search">
+
                 </div>
 
-                <!-- Cart Icon -->
+                <!-- Cart -->
+
                 <div class="cart-icon">
-                    <button>🛒</button>
+
+                    <a href="cart.html" aria-label="Shopping Cart">
+                        🛒
+                    </a>
+
                 </div>
 
-                <!-- User Icon -->
+                <!-- User -->
+
                 <div class="user-icon">
-                    <button>👤</button>
+
+                    <button type="button" aria-label="User">
+                        👤
+                    </button>
+
                 </div>
 
             </div>
 
         </header>
 
-        <!-- Main Content -->
+        <!-- MAIN -->
+
         <main>
 
-            <!-- Payment / Checkout -->
             <section class="payment-section">
 
                 <div class="payment-container">
 
-                    <!-- Left Side - Checkout -->
+                    <!-- LEFT SIDE - PAYMENT FORM -->
+
                     <div class="payment-left">
 
                         <p class="checkout-title">
@@ -67,14 +103,15 @@
                         </p>
 
                         <h1>
-                            Contact Details
+                            Payment Details
                         </h1>
 
                         <!-- Email -->
+
                         <div class="email-section">
 
                             <label for="email">
-                                Email ID
+                                Email Address
                             </label>
 
                             <input
@@ -84,68 +121,46 @@
 
                         </div>
 
-                        <!-- Payment Heading -->
-                        <h1 class="payment-heading">
-                            Payment
-                        </h1>
-
                         <!-- Payment Card -->
+
                         <div class="payment-card">
 
+                            <h2>
+                                Payment Method
+                            </h2>
+
                             <!-- Payment Options -->
+
                             <div class="payment-options">
 
-                                <button class="payment-option active">
+                                <button
+                                    type="button"
+                                    class="payment-option active">
 
-                                    <span class="payment-icon">
-                                        ▣
-                                    </span>
-
-                                    <span>
-                                        Card
-                                    </span>
+                                    💳 Card
 
                                 </button>
 
-                                <button class="payment-option">
+                                <button
+                                    type="button"
+                                    class="payment-option">
 
-                                    <span class="payment-icon">
-                                        ₿
-                                    </span>
-
-                                    <span>
-                                        Crypto
-                                    </span>
+                                    📱 UPI
 
                                 </button>
 
-                                <button class="payment-option">
+                                <button
+                                    type="button"
+                                    class="payment-option">
 
-                                    <span class="payment-icon">
-                                        ▤
-                                    </span>
-
-                                    <span>
-                                        Bank
-                                    </span>
-
-                                </button>
-
-                                <button class="payment-option">
-
-                                    <span class="payment-icon">
-                                        ⋮
-                                    </span>
-
-                                    <span>
-                                        Other
-                                    </span>
+                                    🏦 Net Banking
 
                                 </button>
 
                             </div>
 
                             <!-- Card Number -->
+
                             <div class="input-group">
 
                                 <label for="card-number">
@@ -155,23 +170,24 @@
                                 <input
                                     type="text"
                                     id="card-number"
-                                    placeholder="Enter card number">
+                                    placeholder="1234 5678 9012 3456">
 
                             </div>
 
                             <!-- Expiry + CVV -->
+
                             <div class="input-row">
 
                                 <div class="input-group">
 
                                     <label for="expiry">
-                                        Expiry
+                                        Expiry Date
                                     </label>
 
                                     <input
                                         type="text"
                                         id="expiry"
-                                        placeholder="MM/YY">
+                                        placeholder="MM / YY">
 
                                 </div>
 
@@ -182,15 +198,31 @@
                                     </label>
 
                                     <input
-                                        type="password"
+                                        type="text"
                                         id="cvv"
-                                        placeholder="***">
+                                        placeholder="CVV">
 
                                 </div>
 
                             </div>
 
+                            <!-- Name -->
+
+                            <div class="input-group">
+
+                                <label for="card-name">
+                                    Name on Card
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="card-name"
+                                    placeholder="Enter name on card">
+
+                            </div>
+
                             <!-- Country + ZIP -->
+
                             <div class="input-row">
 
                                 <div class="input-group">
@@ -220,99 +252,125 @@
                                 <div class="input-group">
 
                                     <label for="zip">
-                                        ZIP
+                                        ZIP Code
                                     </label>
 
                                     <input
                                         type="text"
                                         id="zip"
-                                        placeholder="XXXXX">
+                                        placeholder="ZIP Code">
 
                                 </div>
 
                             </div>
 
+                            <!-- Pay Now -->
+
+                            <button
+                                type="submit"
+                                class="payment-pay-now">
+
+                                Pay Now ₹4,899
+
+                            </button>
+
+                            <p class="payment-note">
+                                🔒 Your payment information is secure.
+                            </p>
+
                         </div>
 
                     </div>
 
-                    <!-- Right Side - Order Summary -->
+                    <!-- RIGHT SIDE - ORDER SUMMARY -->
+
                     <div class="payment-right">
 
-                        <h1 class="order-heading">
+                        <h2 class="order-heading">
                             Order Summary
-                        </h1>
+                        </h2>
 
                         <div class="order-card">
 
-                            <!-- Coupon -->
-                            <div class="checkout-coupon">
+                            <!-- Product -->
 
-                                <label for="checkout-coupon">
-                                    Enter Coupon Code
-                                </label>
+                            <div class="order-product">
 
-                                <div class="checkout-coupon-box">
+                                <img
+                                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=300&auto=format&fit=crop"
+                                    alt="Seven By M.S.Dhoni Women's Shoes">
 
-                                    <input
-                                        type="text"
-                                        id="checkout-coupon"
-                                        placeholder="COUPON CODE">
+                                <div>
 
-                                    <button>
-                                        Apply Coupon
-                                    </button>
+                                    <h3>
+                                        Seven By M.S.Dhoni Women's Shoes
+                                    </h3>
+
+                                    <p>
+                                        Quantity: 1
+                                    </p>
+
+                                    <strong>
+                                        ₹4,999
+                                    </strong>
 
                                 </div>
 
                             </div>
 
                             <!-- Order Details -->
+
                             <div class="order-details">
 
                                 <div>
-                                    <span>Sub Total</span>
-                                    <span>₹4,700</span>
+
+                                    <span>
+                                        Subtotal
+                                    </span>
+
+                                    <span>
+                                        ₹4,700
+                                    </span>
+
                                 </div>
 
                                 <div>
-                                    <span>Taxes (if applicable)</span>
-                                    <span>₹199</span>
+
+                                    <span>
+                                        Taxes
+                                    </span>
+
+                                    <span>
+                                        ₹199
+                                    </span>
+
                                 </div>
 
                                 <div>
-                                    <span>Discount</span>
-                                    <span>₹0</span>
+
+                                    <span>
+                                        Discount
+                                    </span>
+
+                                    <span>
+                                        ₹0
+                                    </span>
+
                                 </div>
 
                                 <div class="order-total">
-                                    <span>Total</span>
-                                    <span>₹4,899</span>
+
+                                    <span>
+                                        Total
+                                    </span>
+
+                                    <span>
+                                        ₹4,899
+                                    </span>
+
                                 </div>
 
                             </div>
-
-                        </div>
-
-                        <!-- Pay Now -->
-                        <button class="payment-pay-now">
-                            Pay Now ₹4,899
-                        </button>
-
-                        <!-- Payment Icons -->
-                        <div class="checkout-payment-icons">
-
-                            <span class="secure">
-                                🔒 SECURE
-                            </span>
-
-                            <span class="razorpay">
-                                Razorpay
-                            </span>
-
-                            <span class="upi">
-                                UPI
-                            </span>
 
                         </div>
 
