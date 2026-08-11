@@ -1,13 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Thala 7 Sneaker Store</title>
         <link rel="stylesheet" href="style.css">
     </head>
+
     <body>
 
+        <!-- Header -->
         <header class="header">
 
             <div class="container">
@@ -20,11 +24,10 @@
                 <!-- Navigation -->
                 <nav class="nav">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Brands</a></li>
-                        <li><a href="#">More</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html">Product</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="payment.html">Payment</a></li>
                     </ul>
                 </nav>
 
@@ -47,25 +50,45 @@
             </div>
 
         </header>
+
+        <!-- Main Content -->
         <main>
+
+            <!-- Hero Section -->
             <section class="hero">
+
                 <div class="container">
+
                     <div class="left">
+
                         <h1>7!! Thala for a Reason!</h1>
-                        <p>Step into the world of style and comfort with our
-                            exclusive sneaker collection.</p>
-                        <a href="#" class="btn">Shop Now</a>
+
+                        <p>
+                            Step into the world of style and comfort with our
+                            exclusive sneaker collection.
+                        </p>
+
+                        <a href="product.html" class="btn">Shop Now</a>
+
                     </div>
+
                     <div class="right">
+
                         <img
                             src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="Sneakers">
+
                     </div>
+
                 </div>
+
             </section>
 
+            <!-- Services Section -->
             <section class="services">
+
                 <div class="container">
+
                     <div class="reviews">
                         <h2>2k+</h2>
                         <p>Reviews</p>
@@ -85,531 +108,12 @@
                         <h2>4.5/5</h2>
                         <p>Rating</p>
                     </div>
-                </div>
-
-            </section>
-
-            <section class="display">
-
-                <div class="container">
-
-                    <!-- Product Image Section -->
-                    <div class="left-show">
-
-                        <div class="main-image">
-                            <img
-                                src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=800&auto=format&fit=crop"
-                                alt="Thala 7 Sneakers">
-                        </div>
-
-                    </div>
-
-                    <!-- Product Details Section -->
-                    <div class="right-show">
-
-                        <div class="product-details">
-
-                            <h1>Seven By M.S.Dhoni Women's
-                                Multi-Color Running Shoes</h1>
-
-                            <p class="description">
-                                Experience the perfect blend of style and
-                                comfort
-                                with our exclusive Thala 7 sneakers. Crafted
-                                with
-                                precision and designed for those who value both
-                                fashion and functionality.
-                            </p>
-
-                            <div class="price-section">
-                                <h2>₹1,334</h2>
-
-                                <div class="sale">
-                                    <span>Save 12%</span>
-                                    <p>Inclusive of all Taxes</p>
-                                </div>
-                            </div>
-
-                            <!-- Quantity -->
-                            <div class="quantity">
-                                <button>-</button>
-                                <span>2</span>
-                                <button>+</button>
-                            </div>
-
-                            <!-- Add To Cart -->
-                            <button class="add-cart">
-                                🛒 Add to Cart
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <!-- Product Gallery -->
-
-                <div class="gallery">
-
-                    <div class="gallery-item">
-                        <img
-                            src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHNuZWFrZXJzfGVufDB8fDB8fHww"
-                            alt="White Sneaker">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img
-                            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=400&auto=format&fit=crop"
-                            alt="Sneaker Side">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img
-                            src="https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=400&auto=format&fit=crop"
-                            alt="Sneaker View">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img
-                            src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=400&auto=format&fit=crop"
-                            alt="Sneaker Design">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img
-                            src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=400&auto=format&fit=crop"
-                            alt="Sneaker Details">
-                    </div>
-
-                </div>
-
-            </section>
-
-            <!-- Shopping Cart -->
-
-            <section class="cart-section">
-
-                <div class="cart-container">
-
-                    <!-- Left Side - Cart Items -->
-
-                    <div class="cart-left">
-
-                        <h1>Shopping Cart</h1>
-
-                        <table class="cart-table">
-
-                            <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Quantity</th>
-                                    <th>Price</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-
-                                <tr>
-                                    <td>Seven By M.S.Dhoni Women's Shoes</td>
-
-                                    <td>
-                                        <div class="cart-quantity">
-                                            <button>-</button>
-                                            <span>1</span>
-                                            <button>+</button>
-                                        </div>
-                                    </td>
-
-                                    <td>₹4,999</td>
-
-                                    <td>
-                                        <button class="remove-btn">×</button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Seven By M.S.Dhoni Women's Shoes</td>
-
-                                    <td>
-                                        <div class="cart-quantity">
-                                            <button>-</button>
-                                            <span>1</span>
-                                            <button>+</button>
-                                        </div>
-                                    </td>
-
-                                    <td>₹4,999</td>
-
-                                    <td>
-                                        <button class="remove-btn">×</button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Seven By M.S.Dhoni Women's Shoes</td>
-
-                                    <td>
-                                        <div class="cart-quantity">
-                                            <button>-</button>
-                                            <span>1</span>
-                                            <button>+</button>
-                                        </div>
-                                    </td>
-
-                                    <td>₹4,999</td>
-
-                                    <td>
-                                        <button class="remove-btn">×</button>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
-                        <!-- Continue Shopping -->
-
-                        <a href="#" class="continue-shopping">
-                            ← Continue Shopping
-                        </a>
-
-                    </div>
-
-                    <!-- Right Side - Order Summary -->
-
-                    <div class="cart-right">
-
-                        <div class="cart-summary">
-
-                            <!-- Coupon -->
-
-                            <div class="coupon-section">
-
-                                <label>Enter Coupon Code</label>
-
-                                <div class="coupon-box">
-
-                                    <input
-                                        type="text"
-                                        placeholder="COUPON CODE">
-
-                                    <button>Apply Coupon</button>
-
-                                </div>
-
-                            </div>
-
-                            <!-- Price Details -->
-
-                            <div class="price-details">
-
-                                <div>
-                                    <span>Sub Total</span>
-                                    <span>₹4,700</span>
-                                </div>
-
-                                <div>
-                                    <span>Taxes (if applicable)</span>
-                                    <span>₹199</span>
-                                </div>
-
-                                <div>
-                                    <span>Discount</span>
-                                    <span>₹0</span>
-                                </div>
-
-                                <div class="total">
-                                    <span>Total</span>
-                                    <span>₹4,899</span>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <!-- Pay Now -->
-
-                        <button class="pay-now">
-                            Pay Now ₹4,899
-                        </button>
-
-                        <!-- Payment Icons -->
-
-                        <div class="payment-icons">
-
-                            <span class="secure">🔒 SECURE</span>
-
-                            <span class="razorpay">Razorpay</span>
-
-                            <span class="upi">UPI</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-            <!-- Payment / Checkout -->
-
-            <section class="payment-section">
-
-                <div class="payment-container">
-
-                    <!-- Left Side - Checkout -->
-
-                    <div class="payment-left">
-
-                        <p class="checkout-title">Checkout</p>
-
-                        <h1>Contact Details</h1>
-
-                        <!-- Email -->
-
-                        <div class="email-section">
-
-                            <label for="email">Email ID</label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                placeholder="Enter your email">
-
-                        </div>
-
-                        <!-- Payment Heading -->
-
-                        <h1 class="payment-heading">Payment</h1>
-
-                        <!-- Payment Card -->
-
-                        <div class="payment-card">
-
-                            <!-- Payment Options -->
-
-                            <div class="payment-options">
-
-                                <button class="payment-option active">
-
-                                    <span class="payment-icon">▣</span>
-
-                                    <span>Card</span>
-
-                                </button>
-
-                                <button class="payment-option">
-
-                                    <span class="payment-icon">₿</span>
-
-                                    <span>Crypto</span>
-
-                                </button>
-
-                                <button class="payment-option">
-
-                                    <span class="payment-icon">▤</span>
-
-                                    <span>Bank</span>
-
-                                </button>
-
-                                <button class="payment-option">
-
-                                    <span class="payment-icon">⋮</span>
-
-                                    <span>Other</span>
-
-                                </button>
-
-                            </div>
-
-                            <!-- Card Number -->
-
-                            <div class="input-group">
-
-                                <label for="card-number">
-                                    Card Number
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="card-number"
-                                    placeholder="Enter card number">
-
-                            </div>
-
-                            <!-- Expiry + CVV -->
-
-                            <div class="input-row">
-
-                                <div class="input-group">
-
-                                    <label for="expiry">
-                                        Expiry
-                                    </label>
-
-                                    <input
-                                        type="text"
-                                        id="expiry"
-                                        placeholder="MM/YY">
-
-                                </div>
-
-                                <div class="input-group">
-
-                                    <label for="cvv">
-                                        CVV
-                                    </label>
-
-                                    <input
-                                        type="password"
-                                        id="cvv"
-                                        placeholder="***">
-
-                                </div>
-
-                            </div>
-
-                            <!-- Country + ZIP -->
-
-                            <div class="input-row">
-
-                                <div class="input-group">
-
-                                    <label for="country">
-                                        Country
-                                    </label>
-
-                                    <select id="country">
-
-                                        <option>India</option>
-
-                                        <option>
-                                            United States
-                                        </option>
-
-                                        <option>
-                                            United Kingdom
-                                        </option>
-
-                                    </select>
-
-                                </div>
-
-                                <div class="input-group">
-
-                                    <label for="zip">
-                                        ZIP
-                                    </label>
-
-                                    <input
-                                        type="text"
-                                        id="zip"
-                                        placeholder="XXXXX">
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Right Side - Order Summary -->
-
-                    <div class="payment-right">
-
-                        <h1 class="order-heading">
-                            Order Summary
-                        </h1>
-
-                        <div class="order-card">
-
-                            <!-- Coupon -->
-
-                            <div class="checkout-coupon">
-
-                                <label for="checkout-coupon">
-                                    Enter Coupon Code
-                                </label>
-
-                                <div class="checkout-coupon-box">
-
-                                    <input
-                                        type="text"
-                                        id="checkout-coupon"
-                                        placeholder="COUPON CODE">
-
-                                    <button>
-                                        Apply Coupon
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                            <!-- Order Details -->
-
-                            <div class="order-details">
-
-                                <div>
-                                    <span>Sub Total</span>
-                                    <span>₹4,700</span>
-                                </div>
-
-                                <div>
-                                    <span>Taxes (if applicable)</span>
-                                    <span>₹199</span>
-                                </div>
-
-                                <div>
-                                    <span>Discount</span>
-                                    <span>₹0</span>
-                                </div>
-
-                                <div class="order-total">
-                                    <span>Total</span>
-                                    <span>₹4,899</span>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <!-- Pay Now -->
-
-                        <button class="payment-pay-now">
-                            Pay Now ₹4,899
-                        </button>
-
-                        <!-- Payment Icons -->
-
-                        <div class="checkout-payment-icons">
-
-                            <span class="secure">
-                                🔒 SECURE
-                            </span>
-
-                            <span class="razorpay">
-                                Razorpay
-                            </span>
-
-                            <span class="upi">
-                                UPI
-                            </span>
-
-                        </div>
-
-                    </div>
 
                 </div>
 
             </section>
 
         </main>
-
     </body>
+
 </html>
