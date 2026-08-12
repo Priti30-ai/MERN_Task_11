@@ -1,40 +1,36 @@
 # Thala-7 Sneaker Store
 
-## About the Project
+This is a simple sneaker store website made using HTML, CSS and JavaScript.
 
-Thala-7 Sneaker Store is a simple sneaker shopping website made using HTML and CSS.
+The website has a clean e-commerce style layout where users can view products, add products to the cart and make a payment.
 
-The website has a clean and simple design where users can view sneakers, add them to the cart, and go to the payment page.
+## Pages
 
-The project is mainly created to practice HTML page structure and CSS styling.
+The project contains four main pages:
 
-## Pages in the Website
-
-The website contains these pages:
-
-* **Home** – Shows the main banner and some store information.
-* **Product** – Shows the sneaker details, price, quantity and Add to Cart button.
-* **Cart** – Shows the selected product and price details.
-* **Payment** – Shows payment options and the order summary.
-
-## Technologies Used
-
-* HTML5
-* CSS3
-
-No JavaScript is used in this project.
+* **Home** – Shows the store introduction and services.
+* **Product** – Shows the sneaker details, price, quantity and Add to Cart option.
+* **Cart** – Shows the selected products, quantity, price and total amount.
+* **Payment** – Contains the payment form and order summary.
 
 ## Features
 
-* Simple navigation between pages
-* Sneaker product display
-* Search box
-* Add to Cart button
-* Quantity section
-* Cart summary
-* Payment options
-* Order summary
+* Simple and clean sneaker store design
+* Navigation between all pages
+* Product quantity increase and decrease
+* Add to Cart functionality
+* Remove product from cart
+* Coupon code application
+* Automatic calculation of subtotal, tax, discount and total
+* Payment form validation
 * Responsive design for different screen sizes
+* Basic JavaScript for cart and payment actions
+
+## Technologies Used
+
+* HTML
+* CSS
+* JavaScript
 
 ## Project Files
 
@@ -45,29 +41,32 @@ Thala-7-Sneaker-Store/
 ├── cart.html
 ├── payment.html
 ├── style.css
-└── README.md
+├── script.js
+└── images/
+
 
 ## How to Run
 
-1. Download or clone the project.
+1. Download or clone this project.
 2. Open the project folder in VS Code.
-3. Make sure all HTML files and `style.css` are in the same folder.
+3. Make sure all HTML, CSS, JavaScript and image files are in their correct folders.
 4. Open `index.html` in a browser.
-5. Use the navigation menu to move between the pages.
 
-## What I Learned
+You can also use the **Live Server** extension in VS Code and open `index.html` using Live Server.
 
-While making this project, I learned how to:
+## JavaScript Features
 
-* Create webpages using HTML.
-* Style webpages using CSS.
-* Use Flexbox for arranging content.
-* Create navigation between different pages.
-* Design product and payment sections.
-* Make a website responsive using CSS media queries.
+JavaScript is used to make the shopping cart more interactive.
+
+For example:
+
+* The `+` button increases the product quantity.
+* The `−` button decreases the quantity.
+* The remove button removes a product from the cart.
+* The coupon button applies a discount.
+* The total price changes when the quantity or discount changes.
+* The payment form checks the required details before submitting.
 
 ## Note
 
-This is a frontend project made for learning and practice. The search, cart and payment features are only for the website design and are not connected to a real backend or payment system.
-
-
+This is a frontend project created for learning and practice. It does not process real payments or connect to a real online store.

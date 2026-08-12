@@ -66,8 +66,12 @@
 
                 <div class="cart-icon">
 
-                    <a href="cart.html" aria-label="Shopping Cart">
+                    <a
+                        href="cart.html"
+                        aria-label="Shopping Cart">
+
                         🛒
+
                     </a>
 
                 </div>
@@ -76,8 +80,12 @@
 
                 <div class="user-icon">
 
-                    <button type="button" aria-label="User">
+                    <button
+                        type="button"
+                        aria-label="User">
+
                         👤
+
                     </button>
 
                 </div>
@@ -94,19 +102,19 @@
 
                 <div class="payment-container">
 
-                    <!-- LEFT SIDE - PAYMENT FORM -->
+                    <!-- PAYMENT LEFT -->
 
                     <div class="payment-left">
 
                         <p class="checkout-title">
-                            Checkout
+                            CHECKOUT
                         </p>
 
                         <h1>
-                            Payment Details
+                            Complete Your Payment
                         </h1>
 
-                        <!-- Email -->
+                        <!-- EMAIL -->
 
                         <div class="email-section">
 
@@ -117,25 +125,27 @@
                             <input
                                 type="email"
                                 id="email"
-                                placeholder="Enter your email">
+                                placeholder="Enter your email"
+                                required>
 
                         </div>
 
-                        <!-- Payment Card -->
+                        <!-- PAYMENT CARD -->
 
                         <div class="payment-card">
 
                             <h2>
-                                Payment Method
+                                Payment Details
                             </h2>
 
-                            <!-- Payment Options -->
+                            <!-- PAYMENT OPTIONS -->
 
                             <div class="payment-options">
 
                                 <button
                                     type="button"
-                                    class="payment-option active">
+                                    class="payment-option active"
+                                    data-payment="card">
 
                                     💳 Card
 
@@ -143,146 +153,121 @@
 
                                 <button
                                     type="button"
-                                    class="payment-option">
+                                    class="payment-option"
+                                    data-payment="upi">
 
-                                    📱 UPI
+                                    UPI
 
                                 </button>
 
                                 <button
                                     type="button"
-                                    class="payment-option">
+                                    class="payment-option"
+                                    data-payment="netbanking">
 
-                                    🏦 Net Banking
+                                    Net Banking
 
                                 </button>
 
                             </div>
 
-                            <!-- Card Number -->
+                            <!-- CARD FORM -->
 
-                            <div class="input-group">
+                            <form class="payment-form">
 
-                                <label for="card-number">
-                                    Card Number
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="card-number"
-                                    placeholder="1234 5678 9012 3456">
-
-                            </div>
-
-                            <!-- Expiry + CVV -->
-
-                            <div class="input-row">
+                                <!-- Card Holder -->
 
                                 <div class="input-group">
 
-                                    <label for="expiry">
-                                        Expiry Date
+                                    <label for="card-name">
+                                        Card Holder Name
                                     </label>
 
                                     <input
                                         type="text"
-                                        id="expiry"
-                                        placeholder="MM / YY">
+                                        id="card-name"
+                                        placeholder="Enter card holder name"
+                                        required>
 
                                 </div>
 
+                                <!-- Card Number -->
+
                                 <div class="input-group">
 
-                                    <label for="cvv">
-                                        CVV
+                                    <label for="card-number">
+                                        Card Number
                                     </label>
 
                                     <input
                                         type="text"
-                                        id="cvv"
-                                        placeholder="CVV">
+                                        id="card-number"
+                                        placeholder="Enter 16 digit card number"
+                                        maxlength="16"
+                                        inputmode="numeric"
+                                        required>
 
                                 </div>
 
-                            </div>
+                                <!-- Expiry + CVV -->
 
-                            <!-- Name -->
+                                <div class="input-row">
 
-                            <div class="input-group">
+                                    <div class="input-group">
 
-                                <label for="card-name">
-                                    Name on Card
-                                </label>
+                                        <label for="expiry">
+                                            Expiry Date
+                                        </label>
 
-                                <input
-                                    type="text"
-                                    id="card-name"
-                                    placeholder="Enter name on card">
+                                        <input
+                                            type="text"
+                                            id="expiry"
+                                            placeholder="MM/YY"
+                                            maxlength="5"
+                                            required>
 
-                            </div>
+                                    </div>
 
-                            <!-- Country + ZIP -->
+                                    <div class="input-group">
 
-                            <div class="input-row">
+                                        <label for="cvv">
+                                            CVV
+                                        </label>
 
-                                <div class="input-group">
+                                        <input
+                                            type="password"
+                                            id="cvv"
+                                            placeholder="3 digit CVV"
+                                            maxlength="3"
+                                            inputmode="numeric"
+                                            required>
 
-                                    <label for="country">
-                                        Country
-                                    </label>
-
-                                    <select id="country">
-
-                                        <option>
-                                            India
-                                        </option>
-
-                                        <option>
-                                            United States
-                                        </option>
-
-                                        <option>
-                                            United Kingdom
-                                        </option>
-
-                                    </select>
+                                    </div>
 
                                 </div>
 
-                                <div class="input-group">
+                                <!-- Payment Button -->
 
-                                    <label for="zip">
-                                        ZIP Code
-                                    </label>
+                                <button
+                                    type="submit"
+                                    class="payment-pay-now">
 
-                                    <input
-                                        type="text"
-                                        id="zip"
-                                        placeholder="ZIP Code">
+                                    Pay ₹4,999 Now
 
-                                </div>
+                                </button>
 
-                            </div>
-
-                            <!-- Pay Now -->
-
-                            <button
-                                type="submit"
-                                class="payment-pay-now">
-
-                                Pay Now ₹4,899
-
-                            </button>
+                            </form>
 
                             <p class="payment-note">
-                                🔒 Your payment information is secure.
+                                Your payment information is secure and
+                                protected.
                             </p>
 
                         </div>
 
                     </div>
 
-                    <!-- RIGHT SIDE - ORDER SUMMARY -->
+                    <!-- PAYMENT RIGHT -->
 
                     <div class="payment-right">
 
@@ -292,18 +277,18 @@
 
                         <div class="order-card">
 
-                            <!-- Product -->
+                            <!-- ORDER PRODUCT -->
 
                             <div class="order-product">
 
                                 <img
-                                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=300&auto=format&fit=crop"
-                                    alt="Seven By M.S.Dhoni Women's Shoes">
+                                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=870&auto=format&fit=crop"
+                                    alt="Thala-7 Shoes">
 
                                 <div>
 
                                     <h3>
-                                        Seven By M.S.Dhoni Women's Shoes
+                                        Thala-7 Shoes
                                     </h3>
 
                                     <p>
@@ -318,30 +303,18 @@
 
                             </div>
 
-                            <!-- Order Details -->
+                            <!-- ORDER DETAILS -->
 
                             <div class="order-details">
 
                                 <div>
 
                                     <span>
-                                        Subtotal
+                                        Sub Total
                                     </span>
 
-                                    <span>
-                                        ₹4,700
-                                    </span>
-
-                                </div>
-
-                                <div>
-
-                                    <span>
-                                        Taxes
-                                    </span>
-
-                                    <span>
-                                        ₹199
+                                    <span class="payment-subtotal">
+                                        ₹4,999
                                     </span>
 
                                 </div>
@@ -349,11 +322,11 @@
                                 <div>
 
                                     <span>
-                                        Discount
+                                        Delivery
                                     </span>
 
                                     <span>
-                                        ₹0
+                                        Free
                                     </span>
 
                                 </div>
@@ -364,8 +337,8 @@
                                         Total
                                     </span>
 
-                                    <span>
-                                        ₹4,899
+                                    <span class="payment-total">
+                                        ₹4,999
                                     </span>
 
                                 </div>
@@ -381,6 +354,10 @@
             </section>
 
         </main>
+
+        <!-- JAVASCRIPT -->
+
+        <script src="script.js"></script>
 
     </body>
 

@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,8 +67,12 @@
 
                 <div class="cart-icon">
 
-                    <a href="cart.html" aria-label="Shopping Cart">
+                    <a
+                        href="cart.html"
+                        aria-label="Shopping Cart">
+
                         🛒
+
                     </a>
 
                 </div>
@@ -76,8 +81,12 @@
 
                 <div class="user-icon">
 
-                    <button type="button" aria-label="User">
+                    <button
+                        type="button"
+                        aria-label="User">
+
                         👤
+
                     </button>
 
                 </div>
@@ -115,11 +124,15 @@
                                     </th>
 
                                     <th>
+                                        Price
+                                    </th>
+
+                                    <th>
                                         Quantity
                                     </th>
 
                                     <th>
-                                        Price
+                                        Total
                                     </th>
 
                                     <th>
@@ -134,34 +147,46 @@
 
                                 <!-- Product 1 -->
 
-                                <tr>
+                                <tr class="cart-item">
 
                                     <td>
                                         Seven By M.S.Dhoni Women's Shoes
+                                    </td>
+
+                                    <td class="item-price">
+                                        ₹4999
                                     </td>
 
                                     <td>
 
                                         <div class="cart-quantity">
 
-                                            <button type="button">
+                                            <button
+                                                type="button"
+                                                class="quantity-minus">
+
                                                 −
+
                                             </button>
 
-                                            <span>
+                                            <span class="quantity">
                                                 1
                                             </span>
 
-                                            <button type="button">
+                                            <button
+                                                type="button"
+                                                class="quantity-plus">
+
                                                 +
+
                                             </button>
 
                                         </div>
 
                                     </td>
 
-                                    <td>
-                                        ₹4,999
+                                    <td class="item-total">
+                                        ₹4999
                                     </td>
 
                                     <td>
@@ -180,34 +205,46 @@
 
                                 <!-- Product 2 -->
 
-                                <tr>
+                                <tr class="cart-item">
 
                                     <td>
                                         Seven By M.S.Dhoni Women's Shoes
+                                    </td>
+
+                                    <td class="item-price">
+                                        ₹4999
                                     </td>
 
                                     <td>
 
                                         <div class="cart-quantity">
 
-                                            <button type="button">
+                                            <button
+                                                type="button"
+                                                class="quantity-minus">
+
                                                 −
+
                                             </button>
 
-                                            <span>
+                                            <span class="quantity">
                                                 1
                                             </span>
 
-                                            <button type="button">
+                                            <button
+                                                type="button"
+                                                class="quantity-plus">
+
                                                 +
+
                                             </button>
 
                                         </div>
 
                                     </td>
 
-                                    <td>
-                                        ₹4,999
+                                    <td class="item-total">
+                                        ₹4999
                                     </td>
 
                                     <td>
@@ -226,34 +263,46 @@
 
                                 <!-- Product 3 -->
 
-                                <tr>
+                                <tr class="cart-item">
 
                                     <td>
                                         Seven By M.S.Dhoni Women's Shoes
+                                    </td>
+
+                                    <td class="item-price">
+                                        ₹4999
                                     </td>
 
                                     <td>
 
                                         <div class="cart-quantity">
 
-                                            <button type="button">
+                                            <button
+                                                type="button"
+                                                class="quantity-minus">
+
                                                 −
+
                                             </button>
 
-                                            <span>
+                                            <span class="quantity">
                                                 1
                                             </span>
 
-                                            <button type="button">
+                                            <button
+                                                type="button"
+                                                class="quantity-plus">
+
                                                 +
+
                                             </button>
 
                                         </div>
 
                                     </td>
 
-                                    <td>
-                                        ₹4,999
+                                    <td class="item-total">
+                                        ₹4999
                                     </td>
 
                                     <td>
@@ -296,7 +345,7 @@
 
                             <div class="coupon-section">
 
-                                <label>
+                                <label for="coupon">
                                     Enter Coupon Code
                                 </label>
 
@@ -304,10 +353,16 @@
 
                                     <input
                                         type="text"
+                                        id="coupon"
+                                        class="coupon-input"
                                         placeholder="COUPON CODE">
 
-                                    <button type="button">
+                                    <button
+                                        type="button"
+                                        class="coupon-button">
+
                                         Apply Coupon
+
                                     </button>
 
                                 </div>
@@ -318,17 +373,21 @@
 
                             <div class="price-details">
 
+                                <!-- Sub Total -->
+
                                 <div>
 
                                     <span>
                                         Sub Total
                                     </span>
 
-                                    <span>
-                                        ₹4,700
+                                    <span class="subtotal">
+                                        ₹14997
                                     </span>
 
                                 </div>
+
+                                <!-- Taxes -->
 
                                 <div>
 
@@ -336,11 +395,13 @@
                                         Taxes (if applicable)
                                     </span>
 
-                                    <span>
-                                        ₹199
+                                    <span class="tax">
+                                        ₹0
                                     </span>
 
                                 </div>
+
+                                <!-- Discount -->
 
                                 <div>
 
@@ -348,11 +409,13 @@
                                         Discount
                                     </span>
 
-                                    <span>
+                                    <span class="discount">
                                         ₹0
                                     </span>
 
                                 </div>
+
+                                <!-- Total -->
 
                                 <div class="total">
 
@@ -360,8 +423,8 @@
                                         Total
                                     </span>
 
-                                    <span>
-                                        ₹4,899
+                                    <span class="total-amount">
+                                        ₹14997
                                     </span>
 
                                 </div>
@@ -374,7 +437,10 @@
                                 href="payment.html"
                                 class="pay-now">
 
-                                Pay Now ₹4,899
+                                Pay Now
+                                <span class="pay-amount">
+                                    ₹14997
+                                </span>
 
                             </a>
 
@@ -405,6 +471,10 @@
             </section>
 
         </main>
+
+        <!-- JavaScript -->
+
+        <script src="script.js"></script>
 
     </body>
 
