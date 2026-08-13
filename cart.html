@@ -1,481 +1,136 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
         <title>Shopping Cart - Thala 7 Sneaker Store</title>
-
         <link rel="stylesheet" href="style.css">
     </head>
-
     <body>
 
-        <!-- HEADER -->
-
         <header class="header">
-
-            <div class="container">
-
-                <!-- Logo -->
-
+            <div class="container header-container">
                 <div class="logo">
                     <h1>Thala-7</h1>
                 </div>
 
-                <!-- Navigation -->
-
                 <nav class="nav">
-
                     <ul>
-
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-
-                        <li>
-                            <a href="product.html">Product</a>
-                        </li>
-
-                        <li>
-                            <a href="cart.html">Cart</a>
-                        </li>
-
-                        <li>
-                            <a href="payment.html">Payment</a>
-                        </li>
-
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html">Product</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="payment.html">Payment</a></li>
                     </ul>
-
                 </nav>
 
-                <!-- Search -->
-
                 <div class="search-box">
-
                     <span>🔍</span>
-
-                    <input
-                        type="text"
-                        placeholder="Search">
-
+                    <input type="text" placeholder="Search">
                 </div>
-
-                <!-- Cart -->
 
                 <div class="cart-icon">
-
-                    <a
-                        href="cart.html"
-                        aria-label="Shopping Cart">
-
-                        🛒
-
-                    </a>
-
+                    <a href="cart.html" aria-label="Shopping Cart">🛒</a>
                 </div>
-
-                <!-- User -->
 
                 <div class="user-icon">
-
-                    <button
-                        type="button"
-                        aria-label="User">
-
-                        👤
-
-                    </button>
-
+                    <button type="button" aria-label="User">👤</button>
                 </div>
-
             </div>
-
         </header>
 
-        <!-- MAIN -->
-
-        <main>
-
+        <main class="inner-page-main">
             <section class="cart-section">
-
-                <div class="cart-container">
-
-                    <!-- LEFT SIDE - CART -->
+                <div class="container cart-container">
 
                     <div class="cart-left">
-
-                        <h1>
-                            Shopping Cart
-                        </h1>
-
-                        <!-- Cart Table -->
-
-                        <table class="cart-table">
-
-                            <thead>
-
-                                <tr>
-
-                                    <th>
-                                        Product
-                                    </th>
-
-                                    <th>
-                                        Price
-                                    </th>
-
-                                    <th>
-                                        Quantity
-                                    </th>
-
-                                    <th>
-                                        Total
-                                    </th>
-
-                                    <th>
-                                        Remove
-                                    </th>
-
-                                </tr>
-
-                            </thead>
-
-                            <tbody>
-
-                                <!-- Product 1 -->
-
-                                <tr class="cart-item">
-
-                                    <td>
-                                        Seven By M.S.Dhoni Women's Shoes
-                                    </td>
-
-                                    <td class="item-price">
-                                        ₹4999
-                                    </td>
-
-                                    <td>
-
-                                        <div class="cart-quantity">
-
-                                            <button
-                                                type="button"
-                                                class="quantity-minus">
-
-                                                −
-
-                                            </button>
-
-                                            <span class="quantity">
-                                                1
-                                            </span>
-
-                                            <button
-                                                type="button"
-                                                class="quantity-plus">
-
-                                                +
-
-                                            </button>
-
-                                        </div>
-
-                                    </td>
-
-                                    <td class="item-total">
-                                        ₹4999
-                                    </td>
-
-                                    <td>
-
-                                        <button
-                                            type="button"
-                                            class="remove-btn">
-
-                                            ×
-
-                                        </button>
-
-                                    </td>
-
-                                </tr>
-
-                                <!-- Product 2 -->
-
-                                <tr class="cart-item">
-
-                                    <td>
-                                        Seven By M.S.Dhoni Women's Shoes
-                                    </td>
-
-                                    <td class="item-price">
-                                        ₹4999
-                                    </td>
-
-                                    <td>
-
-                                        <div class="cart-quantity">
-
-                                            <button
-                                                type="button"
-                                                class="quantity-minus">
-
-                                                −
-
-                                            </button>
-
-                                            <span class="quantity">
-                                                1
-                                            </span>
-
-                                            <button
-                                                type="button"
-                                                class="quantity-plus">
-
-                                                +
-
-                                            </button>
-
-                                        </div>
-
-                                    </td>
-
-                                    <td class="item-total">
-                                        ₹4999
-                                    </td>
-
-                                    <td>
-
-                                        <button
-                                            type="button"
-                                            class="remove-btn">
-
-                                            ×
-
-                                        </button>
-
-                                    </td>
-
-                                </tr>
-
-                                <!-- Product 3 -->
-
-                                <tr class="cart-item">
-
-                                    <td>
-                                        Seven By M.S.Dhoni Women's Shoes
-                                    </td>
-
-                                    <td class="item-price">
-                                        ₹4999
-                                    </td>
-
-                                    <td>
-
-                                        <div class="cart-quantity">
-
-                                            <button
-                                                type="button"
-                                                class="quantity-minus">
-
-                                                −
-
-                                            </button>
-
-                                            <span class="quantity">
-                                                1
-                                            </span>
-
-                                            <button
-                                                type="button"
-                                                class="quantity-plus">
-
-                                                +
-
-                                            </button>
-
-                                        </div>
-
-                                    </td>
-
-                                    <td class="item-total">
-                                        ₹4999
-                                    </td>
-
-                                    <td>
-
-                                        <button
-                                            type="button"
-                                            class="remove-btn">
-
-                                            ×
-
-                                        </button>
-
-                                    </td>
-
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-
-                        <!-- Continue Shopping -->
-
-                        <a
-                            href="product.html"
-                            class="continue-shopping">
-
+                        <h1>Shopping Cart</h1>
+
+                        <div class="cart-table-wrapper">
+                            <table class="cart-table">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th>Remove</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="cartTableBody"></tbody>
+                            </table>
+                        </div>
+
+                        <p id="emptyCartMsg" class="empty-cart-msg"
+                            style="display: none;">
+                            Your cart is empty.
+                            <a href="product.html">Go shopping →</a>
+                        </p>
+
+                        <a href="product.html" class="continue-shopping">
                             ← Continue Shopping
-
                         </a>
-
                     </div>
 
-                    <!-- RIGHT SIDE - ORDER SUMMARY -->
-
                     <div class="cart-right">
-
                         <div class="cart-summary">
 
-                            <!-- Coupon -->
-
                             <div class="coupon-section">
-
-                                <label for="coupon">
-                                    Enter Coupon Code
-                                </label>
+                                <label for="coupon">Enter Coupon Code</label>
 
                                 <div class="coupon-box">
-
                                     <input
                                         type="text"
                                         id="coupon"
                                         class="coupon-input"
                                         placeholder="COUPON CODE">
 
-                                    <button
-                                        type="button"
-                                        class="coupon-button">
-
+                                    <button type="button" class="coupon-button">
                                         Apply Coupon
-
                                     </button>
-
                                 </div>
-
                             </div>
-
-                            <!-- Price Details -->
 
                             <div class="price-details">
-
-                                <!-- Sub Total -->
-
                                 <div>
-
-                                    <span>
-                                        Sub Total
-                                    </span>
-
-                                    <span class="subtotal">
-                                        ₹14997
-                                    </span>
-
+                                    <span>Sub Total</span>
+                                    <span class="subtotal">₹0</span>
                                 </div>
 
-                                <!-- Taxes -->
-
                                 <div>
-
-                                    <span>
-                                        Taxes (if applicable)
-                                    </span>
-
-                                    <span class="tax">
-                                        ₹0
-                                    </span>
-
+                                    <span>Taxes</span>
+                                    <span class="tax">₹0</span>
                                 </div>
 
-                                <!-- Discount -->
-
                                 <div>
-
-                                    <span>
-                                        Discount
-                                    </span>
-
-                                    <span class="discount">
-                                        ₹0
-                                    </span>
-
+                                    <span>Discount</span>
+                                    <span class="discount">₹0</span>
                                 </div>
-
-                                <!-- Total -->
 
                                 <div class="total">
-
-                                    <span>
-                                        Total
-                                    </span>
-
-                                    <span class="total-amount">
-                                        ₹14997
-                                    </span>
-
+                                    <span>Total</span>
+                                    <span class="total-amount">₹0</span>
                                 </div>
-
                             </div>
 
-                            <!-- Pay Now -->
-
-                            <a
-                                href="payment.html"
-                                class="pay-now">
-
+                            <a href="payment.html" class="pay-now">
                                 Pay Now
-                                <span class="pay-amount">
-                                    ₹14997
-                                </span>
-
+                                <span class="pay-amount">₹0</span>
                             </a>
 
-                            <!-- Payment Icons -->
-
                             <div class="payment-icons">
-
-                                <span class="secure">
-                                    🔒 SECURE
-                                </span>
-
-                                <span class="razorpay">
-                                    Razorpay
-                                </span>
-
-                                <span class="upi">
-                                    UPI
-                                </span>
-
+                                <span class="secure">🔒 SECURE</span>
+                                <span class="razorpay">Razorpay</span>
+                                <span class="upi">UPI</span>
                             </div>
 
                         </div>
-
                     </div>
 
                 </div>
-
             </section>
-
         </main>
 
-        <!-- JavaScript -->
-
         <script src="script.js"></script>
-
     </body>
-
 </html>

@@ -1,364 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
         <title>Payment - Thala 7 Sneaker Store</title>
-
         <link rel="stylesheet" href="style.css">
     </head>
-
     <body>
 
-        <!-- HEADER -->
-
         <header class="header">
-
-            <div class="container">
-
-                <!-- Logo -->
-
+            <div class="container header-container">
                 <div class="logo">
                     <h1>Thala-7</h1>
                 </div>
 
-                <!-- Navigation -->
-
                 <nav class="nav">
-
                     <ul>
-
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-
-                        <li>
-                            <a href="product.html">Product</a>
-                        </li>
-
-                        <li>
-                            <a href="cart.html">Cart</a>
-                        </li>
-
-                        <li>
-                            <a href="payment.html">Payment</a>
-                        </li>
-
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html">Product</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="payment.html">Payment</a></li>
                     </ul>
-
                 </nav>
 
-                <!-- Search -->
-
                 <div class="search-box">
-
                     <span>🔍</span>
-
-                    <input
-                        type="text"
-                        placeholder="Search">
-
+                    <input type="text" placeholder="Search">
                 </div>
-
-                <!-- Cart -->
 
                 <div class="cart-icon">
-
-                    <a
-                        href="cart.html"
-                        aria-label="Shopping Cart">
-
-                        🛒
-
-                    </a>
-
+                    <a href="cart.html" aria-label="Shopping Cart">🛒</a>
                 </div>
-
-                <!-- User -->
 
                 <div class="user-icon">
-
-                    <button
-                        type="button"
-                        aria-label="User">
-
-                        👤
-
-                    </button>
-
+                    <button type="button" aria-label="User">👤</button>
                 </div>
-
             </div>
-
         </header>
 
-        <!-- MAIN -->
-
-        <main>
-
+        <main class="inner-page-main">
             <section class="payment-section">
-
-                <div class="payment-container">
-
-                    <!-- PAYMENT LEFT -->
+                <div class="container payment-container">
 
                     <div class="payment-left">
+                        <p class="checkout-title">CHECKOUT</p>
+                        <h1>Complete Your Payment</h1>
 
-                        <p class="checkout-title">
-                            CHECKOUT
-                        </p>
-
-                        <h1>
-                            Complete Your Payment
-                        </h1>
-
-                        <!-- EMAIL -->
-
-                        <div class="email-section">
-
-                            <label for="email">
-                                Email Address
-                            </label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                placeholder="Enter your email"
-                                required>
-
+                        <div id="paymentSuccess" class="payment-success"
+                            style="display: none;">
+                            ✅ Payment successful!
+                            <br>
+                            Thank you for shopping with Thala-7.
+                            <br>
+                            Your order has been placed.
                         </div>
 
-                        <!-- PAYMENT CARD -->
+                        <div id="paymentFormWrapper">
+                            <div class="email-section">
+                                <label for="email">Email Address</label>
 
-                        <div class="payment-card">
-
-                            <h2>
-                                Payment Details
-                            </h2>
-
-                            <!-- PAYMENT OPTIONS -->
-
-                            <div class="payment-options">
-
-                                <button
-                                    type="button"
-                                    class="payment-option active"
-                                    data-payment="card">
-
-                                    💳 Card
-
-                                </button>
-
-                                <button
-                                    type="button"
-                                    class="payment-option"
-                                    data-payment="upi">
-
-                                    UPI
-
-                                </button>
-
-                                <button
-                                    type="button"
-                                    class="payment-option"
-                                    data-payment="netbanking">
-
-                                    Net Banking
-
-                                </button>
-
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="Enter your email"
+                                    required>
                             </div>
 
-                            <!-- CARD FORM -->
+                            <div class="payment-card">
+                                <h2>Payment Details</h2>
 
-                            <form class="payment-form">
+                                <div class="payment-options">
+                                    <button
+                                        type="button"
+                                        class="payment-option active"
+                                        data-payment="card">
+                                        💳 Card
+                                    </button>
 
-                                <!-- Card Holder -->
+                                    <button
+                                        type="button"
+                                        class="payment-option"
+                                        data-payment="upi">
+                                        UPI
+                                    </button>
 
-                                <div class="input-group">
-
-                                    <label for="card-name">
-                                        Card Holder Name
-                                    </label>
-
-                                    <input
-                                        type="text"
-                                        id="card-name"
-                                        placeholder="Enter card holder name"
-                                        required>
-
+                                    <button
+                                        type="button"
+                                        class="payment-option"
+                                        data-payment="netbanking">
+                                        Net Banking
+                                    </button>
                                 </div>
 
-                                <!-- Card Number -->
-
-                                <div class="input-group">
-
-                                    <label for="card-number">
-                                        Card Number
-                                    </label>
-
-                                    <input
-                                        type="text"
-                                        id="card-number"
-                                        placeholder="Enter 16 digit card number"
-                                        maxlength="16"
-                                        inputmode="numeric"
-                                        required>
-
-                                </div>
-
-                                <!-- Expiry + CVV -->
-
-                                <div class="input-row">
-
+                                <form class="payment-form">
                                     <div class="input-group">
-
-                                        <label for="expiry">
-                                            Expiry Date
-                                        </label>
+                                        <label for="card-name">Card Holder
+                                            Name</label>
 
                                         <input
                                             type="text"
-                                            id="expiry"
-                                            placeholder="MM/YY"
-                                            maxlength="5"
+                                            id="card-name"
+                                            placeholder="Enter card holder name"
                                             required>
-
                                     </div>
 
                                     <div class="input-group">
-
-                                        <label for="cvv">
-                                            CVV
-                                        </label>
+                                        <label for="card-number">Card
+                                            Number</label>
 
                                         <input
-                                            type="password"
-                                            id="cvv"
-                                            placeholder="3 digit CVV"
-                                            maxlength="3"
+                                            type="text"
+                                            id="card-number"
+                                            placeholder="Enter 16 digit card number"
+                                            maxlength="16"
                                             inputmode="numeric"
                                             required>
-
                                     </div>
 
-                                </div>
+                                    <div class="input-row">
+                                        <div class="input-group">
+                                            <label for="expiry">Expiry
+                                                Date</label>
 
-                                <!-- Payment Button -->
+                                            <input
+                                                type="text"
+                                                id="expiry"
+                                                placeholder="MM/YY"
+                                                maxlength="5"
+                                                required>
+                                        </div>
 
-                                <button
-                                    type="submit"
-                                    class="payment-pay-now">
+                                        <div class="input-group">
+                                            <label for="cvv">CVV</label>
 
-                                    Pay ₹4,999 Now
+                                            <input
+                                                type="password"
+                                                id="cvv"
+                                                placeholder="3 digit CVV"
+                                                maxlength="3"
+                                                inputmode="numeric"
+                                                required>
+                                        </div>
+                                    </div>
 
-                                </button>
+                                    <button type="submit"
+                                        class="payment-pay-now">
+                                        Pay
+                                        <span
+                                            class="payment-pay-amount">₹0</span>
+                                        Now
+                                    </button>
+                                </form>
 
-                            </form>
-
-                            <p class="payment-note">
-                                Your payment information is secure and
-                                protected.
-                            </p>
-
+                                <p class="payment-note">
+                                    Your payment information is secure and
+                                    protected.
+                                </p>
+                            </div>
                         </div>
-
                     </div>
 
-                    <!-- PAYMENT RIGHT -->
-
                     <div class="payment-right">
-
-                        <h2 class="order-heading">
-                            Order Summary
-                        </h2>
+                        <h2 class="order-heading">Order Summary</h2>
 
                         <div class="order-card">
-
-                            <!-- ORDER PRODUCT -->
-
-                            <div class="order-product">
-
-                                <img
-                                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=870&auto=format&fit=crop"
-                                    alt="Thala-7 Shoes">
-
-                                <div>
-
-                                    <h3>
-                                        Thala-7 Shoes
-                                    </h3>
-
-                                    <p>
-                                        Quantity: 1
-                                    </p>
-
-                                    <strong>
-                                        ₹4,999
-                                    </strong>
-
-                                </div>
-
-                            </div>
-
-                            <!-- ORDER DETAILS -->
+                            <div id="orderProductList"></div>
 
                             <div class="order-details">
-
                                 <div>
-
-                                    <span>
-                                        Sub Total
-                                    </span>
-
-                                    <span class="payment-subtotal">
-                                        ₹4,999
-                                    </span>
-
+                                    <span>Sub Total</span>
+                                    <span class="payment-subtotal">₹0</span>
                                 </div>
 
                                 <div>
-
-                                    <span>
-                                        Delivery
-                                    </span>
-
-                                    <span>
-                                        Free
-                                    </span>
-
+                                    <span>Delivery</span>
+                                    <span>Free</span>
                                 </div>
 
                                 <div class="order-total">
-
-                                    <span>
-                                        Total
-                                    </span>
-
-                                    <span class="payment-total">
-                                        ₹4,999
-                                    </span>
-
+                                    <span>Total</span>
+                                    <span class="payment-total">₹0</span>
                                 </div>
-
                             </div>
-
                         </div>
-
                     </div>
 
                 </div>
-
             </section>
-
         </main>
 
-        <!-- JAVASCRIPT -->
-
         <script src="script.js"></script>
-
     </body>
-
 </html>

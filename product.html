@@ -1,260 +1,142 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
         <title>Product - Thala 7 Sneaker Store</title>
-
         <link rel="stylesheet" href="style.css">
     </head>
-
     <body>
 
-        <!-- HEADER -->
-
         <header class="header">
-
-            <div class="container">
-
-                <!-- Logo -->
-
+            <div class="container header-container">
                 <div class="logo">
                     <h1>Thala-7</h1>
                 </div>
 
-                <!-- Navigation -->
-
                 <nav class="nav">
-
                     <ul>
-
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-
-                        <li>
-                            <a href="product.html">Product</a>
-                        </li>
-
-                        <li>
-                            <a href="cart.html">Cart</a>
-                        </li>
-
-                        <li>
-                            <a href="payment.html">Payment</a>
-                        </li>
-
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html">Product</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="payment.html">Payment</a></li>
                     </ul>
-
                 </nav>
 
-                <!-- Search -->
-
                 <div class="search-box">
-
                     <span>🔍</span>
-
-                    <input
-                        type="text"
-                        placeholder="Search">
-
+                    <input type="text" placeholder="Search">
                 </div>
-
-                <!-- Cart -->
 
                 <div class="cart-icon">
-
-                    <a
-                        href="cart.html"
-                        aria-label="Shopping Cart">
-
-                        🛒
-
-                    </a>
-
+                    <a href="cart.html" aria-label="Shopping Cart">🛒</a>
                 </div>
-
-                <!-- User -->
 
                 <div class="user-icon">
-
-                    <button
-                        type="button"
-                        aria-label="User">
-
-                        👤
-
-                    </button>
-
+                    <button type="button" aria-label="User">👤</button>
                 </div>
-
             </div>
-
         </header>
 
-        <!-- MAIN -->
-
-        <main>
-
-            <!-- PRODUCT DISPLAY -->
-
+        <main class="inner-page-main">
             <section class="display">
-
-                <div class="container">
-
-                    <!-- LEFT - PRODUCT IMAGE -->
+                <div class="container product-container">
 
                     <div class="left-show">
-
                         <div class="main-image">
-
                             <img
+                                id="mainProductImage"
                                 src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=870&auto=format&fit=crop"
                                 alt="Seven By M.S.Dhoni Women's Shoes">
-
                         </div>
-
                     </div>
-
-                    <!-- RIGHT - PRODUCT DETAILS -->
 
                     <div class="right-show">
-
                         <div class="product-details">
-
-                            <h1>
-                                Seven By M.S.Dhoni Women's Shoes
-                            </h1>
+                            <h1>Seven By M.S.Dhoni Women's Shoes</h1>
 
                             <p class="description">
-                                Stylish and comfortable sneakers designed
-                                for everyday use. Get the perfect combination
-                                of comfort, quality and style.
+                                Stylish and comfortable sneakers designed for
+                                everyday use.
+                                Get the perfect combination of comfort, quality
+                                and style.
                             </p>
 
-                            <!-- Price -->
-
                             <div class="price-section">
-
-                                <h2>
-                                    ₹1,334
-                                </h2>
+                                <h2>₹1,334</h2>
 
                                 <div class="sale">
-
-                                    <span>
-                                        73% OFF
-                                    </span>
-
-                                    <p>
-                                        Limited Time Offer
-                                    </p>
-
+                                    <span>73% OFF</span>
+                                    <p>Limited Time Offer</p>
                                 </div>
-
                             </div>
-
-                            <!-- Quantity + Add To Cart -->
 
                             <div class="product-actions">
-
                                 <div class="quantity">
-
-                                    <button
-                                        type="button"
-                                        class="quantity-minus">
-
-                                        −
-
-                                    </button>
-
-                                    <span class="product-quantity">
-                                        2
-                                    </span>
-
-                                    <button
-                                        type="button"
-                                        class="quantity-plus">
-
-                                        +
-
-                                    </button>
-
+                                    <button type="button"
+                                        id="qtyMinus">−</button>
+                                    <span id="productQty">1</span>
+                                    <button type="button"
+                                        id="qtyPlus">+</button>
                                 </div>
 
-                                <a
-                                    href="cart.html"
-                                    class="add-cart">
-
+                                <button
+                                    type="button"
+                                    id="addToCartBtn"
+                                    class="add-cart"
+                                    data-id="shoe-1"
+                                    data-name="Seven By M.S.Dhoni Women's Shoes"
+                                    data-price="1334"
+                                    data-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=870&auto=format&fit=crop">
                                     🛒 Add to Cart
-
-                                </a>
-
+                                </button>
                             </div>
 
+                            <p id="addToCartMsg" class="add-cart-msg"></p>
                         </div>
-
                     </div>
 
                 </div>
-
-                <!-- PRODUCT GALLERY -->
 
                 <div class="gallery">
-
                     <div class="gallery-item">
-
                         <img
+                            class="gallery-thumb active-thumb"
                             src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=870&auto=format&fit=crop"
                             alt="Shoe Image 1">
-
                     </div>
 
                     <div class="gallery-item">
-
                         <img
+                            class="gallery-thumb"
                             src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=870&auto=format&fit=crop"
                             alt="Shoe Image 2">
-
                     </div>
 
                     <div class="gallery-item">
-
                         <img
+                            class="gallery-thumb"
                             src="https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=870&auto=format&fit=crop"
                             alt="Shoe Image 3">
-
                     </div>
 
                     <div class="gallery-item">
-
                         <img
+                            class="gallery-thumb"
                             src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=870&auto=format&fit=crop"
                             alt="Shoe Image 4">
-
                     </div>
 
                     <div class="gallery-item">
-
                         <img
+                            class="gallery-thumb"
                             src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=870&auto=format&fit=crop"
                             alt="Shoe Image 5">
-
                     </div>
-
                 </div>
-
             </section>
-
         </main>
 
-        <!-- JAVASCRIPT -->
-
         <script src="script.js"></script>
-
     </body>
-
 </html>
