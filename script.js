@@ -1,20 +1,39 @@
 const CART_KEY = "thala7_cart";
+
 const TAX_RATE = 0.05;
 
-const COUPONS = {
-    THALA7: 500,
-    WELCOME10: 300,
-    SEVEN50: 750
-};
+const coupons = [
+    {
+        code: "THALA10",
+        type: "percentage",
+        value: 10,
+        minimumAmount: 1000,
+        maximumDiscount: 300
+    },
+    {
+        code: "WELCOME200",
+        type: "fixed",
+        value: 200,
+        minimumAmount: 500,
+        maximumDiscount: 200
+    },
+    {
+        code: "SEVEN15",
+        type: "percentage",
+        value: 15,
+        minimumAmount: 1500,
+        maximumDiscount: 500
+    }
+];
 
 function getCart() {
-    const data = localStorage.getItem(CART_KEY);
+    const savedCart = localStorage.getItem(CART_KEY);
 
-    try {
-        return data ? JSON.parse(data) : [];
-    } catch {
-        return [];
+    if (savedCart) {
+        return JSON.parse(savedCart);
     }
+
+    return [];
 }
 
 function saveCart(cart) {
@@ -25,9 +44,12 @@ function formatRupees(amount) {
     return "₹" + Math.round(amount).toLocaleString("en-IN");
 }
 
-function addToCart(product) {
+function addProductToCart(product) {
     const cart = getCart();
-    const existingProduct = cart.find(item => item.id === product.id);
+
+    const existingProduct = cart.find(function (item) {
+        return item.id === product.id;
+    });
 
     if (existingProduct) {
         existingProduct.qty += product.qty;
@@ -38,167 +60,216 @@ function addToCart(product) {
     saveCart(cart);
 }
 
-/* PRODUCT PAGE */
+/* PRODUCT QUANTITY */
 
-const mainImage = document.getElementById("mainProductImage");
+const quantityDisplay = document.getElementById("productQty");
+const quantityPlus = document.getElementById("qtyPlus");
+const quantityMinus = document.getElementById("qtyMinus");
 
-if (mainImage) {
-    const thumbnails = document.querySelectorAll(".gallery-thumb");
-    const quantityDisplay = document.getElementById("productQty");
-    const quantityMinus = document.getElementById("qtyMinus");
-    const quantityPlus = document.getElementById("qtyPlus");
-    const addToCartButton = document.getElementById("addToCartBtn");
-    const addToCartMessage = document.getElementById("addToCartMsg");
+if (quantityDisplay && quantityPlus && quantityMinus) {
+    quantityPlus.addEventListener("click", function () {
+        let quantity = Number(quantityDisplay.textContent);
+        quantity = quantity + 1;
+        quantityDisplay.textContent = quantity;
+    });
 
-    thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener("click", () => {
-            mainImage.src = thumbnail.src;
+    quantityMinus.addEventListener("click", function () {
+        let quantity = Number(quantityDisplay.textContent);
 
-            thumbnails.forEach(item => {
+        if (quantity > 1) {
+            quantity = quantity - 1;
+            quantityDisplay.textContent = quantity;
+        }
+    });
+}
+
+/* ADD PRODUCT TO CART */
+
+const addToCartButton = document.getElementById("addToCartBtn");
+
+if (addToCartButton) {
+    addToCartButton.addEventListener("click", function () {
+        const quantity = Number(
+            document.getElementById("productQty").textContent
+        );
+
+        const product = {
+            id: addToCartButton.dataset.id,
+            name: addToCartButton.dataset.name,
+            price: Number(addToCartButton.dataset.price),
+            image: addToCartButton.dataset.image,
+            qty: quantity
+        };
+
+        addProductToCart(product);
+
+        document.getElementById("addToCartMsg").textContent =
+            "Product added to cart.";
+    });
+}
+
+/* PRODUCT IMAGE GALLERY */
+
+const mainProductImage =
+    document.getElementById("mainProductImage");
+
+const thumbnails =
+    document.querySelectorAll(".gallery-thumb");
+
+if (mainProductImage && thumbnails.length > 0) {
+    thumbnails.forEach(function (thumbnail) {
+        thumbnail.addEventListener("click", function () {
+            mainProductImage.src = thumbnail.src;
+
+            thumbnails.forEach(function (item) {
                 item.classList.remove("active-thumb");
             });
 
             thumbnail.classList.add("active-thumb");
         });
     });
+}
 
-    quantityPlus.addEventListener("click", () => {
-        const currentQuantity = parseInt(quantityDisplay.textContent, 10);
-        quantityDisplay.textContent = currentQuantity + 1;
+/* GALLERY SCROLLING */
+
+const productGallery =
+    document.getElementById("productGallery");
+
+const galleryLeftButton =
+    document.querySelector(".gallery-left");
+
+const galleryRightButton =
+    document.querySelector(".gallery-right");
+
+if (
+    productGallery &&
+    galleryLeftButton &&
+    galleryRightButton
+) {
+    galleryLeftButton.addEventListener("click", function () {
+        productGallery.scrollLeft -= 220;
     });
 
-    quantityMinus.addEventListener("click", () => {
-        const currentQuantity = parseInt(quantityDisplay.textContent, 10);
+    galleryRightButton.addEventListener("click", function () {
+        productGallery.scrollLeft += 220;
+    });
+}
 
-        if (currentQuantity > 1) {
-            quantityDisplay.textContent = currentQuantity - 1;
+/* COUPON FUNCTIONS */
+
+function findCoupon(code) {
+    for (let i = 0; i < coupons.length; i++) {
+        if (coupons[i].code === code) {
+            return coupons[i];
         }
-    });
+    }
 
-    addToCartButton.addEventListener("click", () => {
-        const quantity = parseInt(quantityDisplay.textContent, 10);
+    return null;
+}
 
-        addToCart({
-            id: addToCartButton.dataset.id,
-            name: addToCartButton.dataset.name,
-            price: parseInt(addToCartButton.dataset.price, 10),
-            image: addToCartButton.dataset.image,
-            qty: quantity
-        });
+function calculateDiscount(coupon, subtotal) {
+    if (!coupon) {
+        return 0;
+    }
 
-        addToCartMessage.textContent =
-            quantity + " item(s) added to cart!";
+    if (subtotal < coupon.minimumAmount) {
+        return 0;
+    }
 
-        setTimeout(() => {
-            addToCartMessage.textContent = "";
-        }, 2500);
-    });
+    let discount = 0;
+
+    if (coupon.type === "percentage") {
+        discount = subtotal * coupon.value / 100;
+    } else {
+        discount = coupon.value;
+    }
+
+    if (discount > coupon.maximumDiscount) {
+        discount = coupon.maximumDiscount;
+    }
+
+    return Math.round(discount);
 }
 
 /* CART PAGE */
 
-const cartTableBody = document.getElementById("cartTableBody");
+const cartTableBody =
+    document.getElementById("cartTableBody");
 
 if (cartTableBody) {
-    let appliedDiscount = 0;
+    let currentDiscount = 0;
 
-    function updateCartSummary(cart) {
-        const subtotal = cart.reduce(
-            (total, item) => total + item.price * item.qty,
-            0
-        );
+    const couponInput =
+        document.querySelector(".coupon-input");
 
-        const tax = Math.round(subtotal * TAX_RATE);
-        const finalTotal = Math.max(
-            0,
-            subtotal + tax - appliedDiscount
-        );
+    const couponButton =
+        document.querySelector(".coupon-button");
 
-        document.querySelector(".subtotal").textContent =
-            formatRupees(subtotal);
-
-        document.querySelector(".tax").textContent =
-            formatRupees(tax);
-
-        document.querySelector(".discount").textContent =
-            formatRupees(appliedDiscount);
-
-        document.querySelector(".total-amount").textContent =
-            formatRupees(finalTotal);
-
-        document.querySelector(".pay-amount").textContent =
-            formatRupees(finalTotal);
-
-        const payNowButton = document.querySelector(".pay-now");
-
-        if (payNowButton) {
-            if (cart.length === 0) {
-                payNowButton.style.pointerEvents = "none";
-                payNowButton.style.opacity = "0.5";
-            } else {
-                payNowButton.style.pointerEvents = "auto";
-                payNowButton.style.opacity = "1";
-            }
-        }
-    }
+    const couponMessage =
+        document.getElementById("couponMessage");
 
     function renderCart() {
         const cart = getCart();
-        const emptyCartMessage = document.getElementById("emptyCartMsg");
 
         cartTableBody.innerHTML = "";
 
-        emptyCartMessage.style.display =
-            cart.length === 0 ? "block" : "none";
+        const emptyMessage =
+            document.getElementById("emptyCartMsg");
 
-        cart.forEach(item => {
+        if (cart.length === 0) {
+            emptyMessage.style.display = "block";
+        } else {
+            emptyMessage.style.display = "none";
+        }
+
+        cart.forEach(function (item) {
             const row = document.createElement("tr");
 
             row.innerHTML = `
         <td>${item.name}</td>
-
         <td>${formatRupees(item.price)}</td>
-
         <td>
           <div class="cart-quantity">
-            <button type="button" class="quantity-minus">−</button>
+            <button class="quantity-minus" type="button">−</button>
             <span>${item.qty}</span>
-            <button type="button" class="quantity-plus">+</button>
+            <button class="quantity-plus" type="button">+</button>
           </div>
         </td>
-
         <td>${formatRupees(item.price * item.qty)}</td>
-
         <td>
-          <button
-            type="button"
-            class="remove-btn"
-            aria-label="Remove item">
-            ×
-          </button>
+          <button class="remove-btn" type="button">×</button>
         </td>
       `;
 
-            row.querySelector(".quantity-plus").addEventListener("click", () => {
-                item.qty += 1;
+            const plusButton =
+                row.querySelector(".quantity-plus");
+
+            const minusButton =
+                row.querySelector(".quantity-minus");
+
+            const removeButton =
+                row.querySelector(".remove-btn");
+
+            plusButton.addEventListener("click", function () {
+                item.qty = item.qty + 1;
                 saveCart(cart);
                 renderCart();
             });
 
-            row.querySelector(".quantity-minus").addEventListener("click", () => {
+            minusButton.addEventListener("click", function () {
                 if (item.qty > 1) {
-                    item.qty -= 1;
+                    item.qty = item.qty - 1;
                     saveCart(cart);
                     renderCart();
                 }
             });
 
-            row.querySelector(".remove-btn").addEventListener("click", () => {
-                const updatedCart = cart.filter(
-                    cartItem => cartItem.id !== item.id
-                );
+            removeButton.addEventListener("click", function () {
+                const newCart = cart.filter(function (cartItem) {
+                    return cartItem.id !== item.id;
+                });
 
-                saveCart(updatedCart);
+                saveCart(newCart);
                 renderCart();
             });
 
@@ -208,29 +279,90 @@ if (cartTableBody) {
         updateCartSummary(cart);
     }
 
-    const couponInput = document.querySelector(".coupon-input");
-    const couponButton = document.querySelector(".coupon-button");
+    function updateCartSummary(cart) {
+        let subtotal = 0;
 
-    couponButton.addEventListener("click", () => {
-        const couponCode = couponInput.value.trim().toUpperCase();
+        cart.forEach(function (item) {
+            subtotal += item.price * item.qty;
+        });
 
-        if (couponCode === "") {
-            alert("Please enter a coupon code.");
+        const tax = Math.round(subtotal * TAX_RATE);
+
+        const total = Math.max(
+            0,
+            subtotal + tax - currentDiscount
+        );
+
+        document.querySelector(".subtotal").textContent =
+            formatRupees(subtotal);
+
+        document.querySelector(".tax").textContent =
+            formatRupees(tax);
+
+        document.querySelector(".discount").textContent =
+            formatRupees(currentDiscount);
+
+        document.querySelector(".total-amount").textContent =
+            formatRupees(total);
+
+        document.querySelector(".pay-amount").textContent =
+            formatRupees(total);
+
+        const payButton =
+            document.querySelector(".pay-now");
+
+        if (cart.length === 0) {
+            payButton.style.pointerEvents = "none";
+            payButton.style.opacity = "0.5";
+        } else {
+            payButton.style.pointerEvents = "auto";
+            payButton.style.opacity = "1";
+        }
+    }
+
+    couponButton.addEventListener("click", function () {
+        const enteredCode =
+            couponInput.value.trim().toUpperCase();
+
+        const cart = getCart();
+
+        let subtotal = 0;
+
+        cart.forEach(function (item) {
+            subtotal += item.price * item.qty;
+        });
+
+        const selectedCoupon = findCoupon(enteredCode);
+
+        if (!selectedCoupon) {
+            currentDiscount = 0;
+            couponMessage.textContent = "Invalid coupon code.";
+            couponMessage.style.color = "red";
+            renderCart();
             return;
         }
 
-        if (COUPONS[couponCode]) {
-            appliedDiscount = COUPONS[couponCode];
+        if (subtotal < selectedCoupon.minimumAmount) {
+            currentDiscount = 0;
 
-            alert(
-                "Coupon applied! " +
-                formatRupees(appliedDiscount) +
-                " discount added."
-            );
-        } else {
-            appliedDiscount = 0;
-            alert("Invalid coupon code.");
+            couponMessage.textContent =
+                "Minimum purchase is " +
+                formatRupees(selectedCoupon.minimumAmount) +
+                ".";
+
+            couponMessage.style.color = "red";
+            renderCart();
+            return;
         }
+
+        currentDiscount =
+            calculateDiscount(selectedCoupon, subtotal);
+
+        couponMessage.textContent =
+            "Coupon applied. Discount: " +
+            formatRupees(currentDiscount);
+
+        couponMessage.style.color = "#45a86b";
 
         renderCart();
     });
@@ -240,20 +372,16 @@ if (cartTableBody) {
 
 /* PAYMENT PAGE */
 
-const paymentForm = document.querySelector(".payment-form");
+const paymentForm =
+    document.querySelector(".payment-form");
 
 if (paymentForm) {
+    const cart = getCart();
+
     const orderProductList =
         document.getElementById("orderProductList");
 
-    const cart = getCart();
-
-    function renderOrderSummary() {
-        const subtotal = cart.reduce(
-            (total, item) => total + item.price * item.qty,
-            0
-        );
-
+    function showOrderSummary() {
         orderProductList.innerHTML = "";
 
         if (cart.length === 0) {
@@ -265,14 +393,18 @@ if (paymentForm) {
       `;
         }
 
-        cart.forEach(item => {
-            const orderProduct = document.createElement("div");
+        let subtotal = 0;
 
-            orderProduct.classList.add("order-product");
+        cart.forEach(function (item) {
+            subtotal += item.price * item.qty;
 
-            orderProduct.innerHTML = `
+            const productDiv =
+                document.createElement("div");
+
+            productDiv.classList.add("order-product");
+
+            productDiv.innerHTML = `
         <img src="${item.image}" alt="${item.name}">
-
         <div>
           <h3>${item.name}</h3>
           <p>Quantity: ${item.qty}</p>
@@ -282,7 +414,7 @@ if (paymentForm) {
         </div>
       `;
 
-            orderProductList.appendChild(orderProduct);
+            orderProductList.appendChild(productDiv);
         });
 
         document.querySelector(".payment-subtotal").textContent =
@@ -295,71 +427,70 @@ if (paymentForm) {
             formatRupees(subtotal);
     }
 
-    renderOrderSummary();
+    showOrderSummary();
 
     const paymentOptions =
         document.querySelectorAll(".payment-option");
 
-    paymentOptions.forEach(option => {
-        option.addEventListener("click", () => {
-            paymentOptions.forEach(item => {
-                item.classList.remove("active");
+    paymentOptions.forEach(function (option) {
+        option.addEventListener("click", function () {
+            paymentOptions.forEach(function (button) {
+                button.classList.remove("active");
             });
 
             option.classList.add("active");
         });
     });
 
-    paymentForm.addEventListener("submit", event => {
+    paymentForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
         if (cart.length === 0) {
-            alert(
-                "Your cart is empty. Please add a product before payment."
-            );
+            alert("Your cart is empty.");
             return;
         }
 
-        const cardName =
-            document.querySelector("#card-name").value.trim();
-
         const email =
-            document.querySelector("#email").value.trim();
+            document.getElementById("email").value.trim();
+
+        const cardName =
+            document.getElementById("card-name").value.trim();
 
         const cardNumber =
-            document
-                .querySelector("#card-number")
-                .value
-                .trim()
-                .replace(/\s/g, "");
+            document.getElementById("card-number").value.trim();
 
         const expiry =
-            document.querySelector("#expiry").value.trim();
+            document.getElementById("expiry").value.trim();
 
         const cvv =
-            document.querySelector("#cvv").value.trim();
+            document.getElementById("cvv").value.trim();
+
+        if (email === "") {
+            alert("Please enter your email.");
+            return;
+        }
+
+        if (!email.includes("@")) {
+            alert("Please enter a valid email.");
+            return;
+        }
 
         if (cardName === "") {
             alert("Please enter the card holder name.");
             return;
         }
 
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            alert("Please enter a valid email address.");
-            return;
-        }
-
-        if (!/^\d{16}$/.test(cardNumber)) {
+        if (!/^[0-9]{16}$/.test(cardNumber)) {
             alert("Card number must contain 16 digits.");
             return;
         }
 
-        if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(expiry)) {
-            alert("Please enter expiry date in MM/YY format.");
+        if (!/^(0[1-9]|1[0-2])\/[0-9]{2}$/.test(expiry)) {
+            alert("Use MM/YY format for expiry date.");
             return;
         }
 
-        if (!/^\d{3}$/.test(cvv)) {
+        if (!/^[0-9]{3}$/.test(cvv)) {
             alert("CVV must contain 3 digits.");
             return;
         }

@@ -10,6 +10,7 @@
 
         <header class="header">
             <div class="container header-container">
+
                 <div class="logo">
                     <h1>Thala-7</h1>
                 </div>
@@ -25,7 +26,7 @@
 
                 <div class="search-box">
                     <span>🔍</span>
-                    <input type="text" placeholder="Search">
+                    <input type="text" id="cartSearch" placeholder="Search">
                 </div>
 
                 <div class="cart-icon">
@@ -35,10 +36,12 @@
                 <div class="user-icon">
                     <button type="button" aria-label="User">👤</button>
                 </div>
+
             </div>
         </header>
 
         <main class="inner-page-main">
+
             <section class="cart-section">
                 <div class="container cart-container">
 
@@ -61,8 +64,7 @@
                             </table>
                         </div>
 
-                        <p id="emptyCartMsg" class="empty-cart-msg"
-                            style="display: none;">
+                        <p id="emptyCartMsg" class="empty-cart-msg">
                             Your cart is empty.
                             <a href="product.html">Go shopping →</a>
                         </p>
@@ -89,6 +91,9 @@
                                         Apply Coupon
                                     </button>
                                 </div>
+
+                                <p id="couponMessage"
+                                    class="coupon-message"></p>
                             </div>
 
                             <div class="price-details">
@@ -129,6 +134,7 @@
 
                 </div>
             </section>
+
         </main>
 
         <script src="script.js"></script>
