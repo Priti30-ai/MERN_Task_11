@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Shopping Cart - Thala 7 Sneaker Store</title>
         <link rel="stylesheet" href="style.css">
     </head>
+
     <body>
 
         <header class="header">
+
             <div class="container header-container">
 
                 <div class="logo">
@@ -26,30 +29,35 @@
 
                 <div class="search-box">
                     <span>🔍</span>
-                    <input type="text" id="cartSearch" placeholder="Search">
+                    <input type="text" placeholder="Search">
                 </div>
 
                 <div class="cart-icon">
-                    <a href="cart.html" aria-label="Shopping Cart">🛒</a>
+                    <a href="cart.html">🛒</a>
                 </div>
 
                 <div class="user-icon">
-                    <button type="button" aria-label="User">👤</button>
+                    <button type="button">👤</button>
                 </div>
 
             </div>
+
         </header>
 
         <main class="inner-page-main">
 
             <section class="cart-section">
+
                 <div class="container cart-container">
 
                     <div class="cart-left">
+
                         <h1>Shopping Cart</h1>
 
                         <div class="cart-table-wrapper">
+
                             <table class="cart-table">
+
                                 <thead>
                                     <tr>
                                         <th>Product</th>
@@ -61,7 +69,9 @@
                                 </thead>
 
                                 <tbody id="cartTableBody"></tbody>
+
                             </table>
+
                         </div>
 
                         <p id="emptyCartMsg" class="empty-cart-msg">
@@ -72,31 +82,42 @@
                         <a href="product.html" class="continue-shopping">
                             ← Continue Shopping
                         </a>
+
                     </div>
 
                     <div class="cart-right">
+
                         <div class="cart-summary">
 
                             <div class="coupon-section">
-                                <label for="coupon">Enter Coupon Code</label>
+
+                                <label for="coupon">
+                                    Enter Coupon Code
+                                </label>
 
                                 <div class="coupon-box">
+
                                     <input
                                         type="text"
                                         id="coupon"
                                         class="coupon-input"
                                         placeholder="COUPON CODE">
 
-                                    <button type="button" class="coupon-button">
+                                    <button
+                                        type="button"
+                                        class="coupon-button">
                                         Apply Coupon
                                     </button>
+
                                 </div>
 
                                 <p id="couponMessage"
                                     class="coupon-message"></p>
+
                             </div>
 
                             <div class="price-details">
+
                                 <div>
                                     <span>Sub Total</span>
                                     <span class="subtotal">₹0</span>
@@ -116,6 +137,7 @@
                                     <span>Total</span>
                                     <span class="total-amount">₹0</span>
                                 </div>
+
                             </div>
 
                             <a href="payment.html" class="pay-now">
@@ -130,13 +152,16 @@
                             </div>
 
                         </div>
+
                     </div>
 
                 </div>
+
             </section>
 
         </main>
 
         <script src="script.js"></script>
+
     </body>
 </html>

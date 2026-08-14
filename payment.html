@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Payment - Thala 7 Sneaker Store</title>
         <link rel="stylesheet" href="style.css">
     </head>
+
     <body>
 
         <header class="header">
+
             <div class="container header-container">
 
                 <div class="logo">
@@ -26,52 +29,69 @@
 
                 <div class="search-box">
                     <span>🔍</span>
-                    <input type="text" id="paymentSearch" placeholder="Search">
+                    <input type="text" placeholder="Search">
                 </div>
 
                 <div class="cart-icon">
-                    <a href="cart.html" aria-label="Shopping Cart">🛒</a>
+                    <a href="cart.html">🛒</a>
                 </div>
 
                 <div class="user-icon">
-                    <button type="button" aria-label="User">👤</button>
+                    <button type="button">👤</button>
                 </div>
 
             </div>
+
         </header>
 
         <main class="inner-page-main">
 
             <section class="payment-section">
+
                 <div class="container payment-container">
 
                     <div class="payment-left">
 
                         <p class="checkout-title">CHECKOUT</p>
+
                         <h1>Complete Your Payment</h1>
 
-                        <div
-                            id="paymentSuccess"
-                            class="payment-success"
-                            style="display: none;">
+                        <!-- Payment success message -->
 
-                            ✅ Payment successful!
-                            <br>
-                            Thank you for shopping with Thala-7.
-                            <br>
-                            Your order has been placed.
+                        <div id="paymentSuccess" class="payment-success">
+
+                            <h2>Payment Successful!</h2>
+
+                            <p>
+                                Thank you for shopping with Thala-7.
+                            </p>
+
+                            <p>
+                                Your order has been placed successfully.
+                            </p>
+
+                            <a href="product.html" class="btn">
+                                Continue Shopping
+                            </a>
+
                         </div>
+
+                        <!-- Payment form -->
 
                         <div id="paymentFormWrapper">
 
                             <div class="email-section">
-                                <label for="email">Email Address</label>
+
+                                <label for="email">
+                                    Email Address
+                                </label>
 
                                 <input
                                     type="email"
                                     id="email"
                                     placeholder="Enter your email"
                                     required>
+
                             </div>
 
                             <div class="payment-card">
@@ -79,6 +99,7 @@
                                 <h2>Payment Details</h2>
 
                                 <div class="payment-options">
+
                                     <button
                                         type="button"
                                         class="payment-option active"
@@ -99,39 +120,47 @@
                                         data-payment="netbanking">
                                         Net Banking
                                     </button>
+
                                 </div>
 
                                 <form class="payment-form">
 
                                     <div class="input-group">
-                                        <label for="card-name">Card Holder
-                                            Name</label>
+
+                                        <label for="card-name">
+                                            Card Holder Name
+                                        </label>
 
                                         <input
                                             type="text"
                                             id="card-name"
                                             placeholder="Enter card holder name"
                                             required>
+
                                     </div>
 
                                     <div class="input-group">
-                                        <label for="card-number">Card
-                                            Number</label>
+
+                                        <label for="card-number">
+                                            Card Number
+                                        </label>
 
                                         <input
                                             type="text"
                                             id="card-number"
                                             placeholder="Enter 16 digit card number"
                                             maxlength="16"
-                                            inputmode="numeric"
                                             required>
+
                                     </div>
 
                                     <div class="input-row">
 
                                         <div class="input-group">
-                                            <label for="expiry">Expiry
-                                                Date</label>
+
+                                            <label for="expiry">
+                                                Expiry Date
+                                            </label>
 
                                             <input
                                                 type="text"
@@ -139,53 +168,69 @@
                                                 placeholder="MM/YY"
                                                 maxlength="5"
                                                 required>
+
                                         </div>
 
                                         <div class="input-group">
-                                            <label for="cvv">CVV</label>
+
+                                            <label for="cvv">
+                                                CVV
+                                            </label>
 
                                             <input
                                                 type="password"
                                                 id="cvv"
                                                 placeholder="3 digit CVV"
                                                 maxlength="3"
-                                                inputmode="numeric"
                                                 required>
+
                                         </div>
 
                                     </div>
 
-                                    <button type="submit"
+                                    <button
+                                        type="submit"
                                         class="payment-pay-now">
+
                                         Pay
-                                        <span
-                                            class="payment-pay-amount">₹0</span>
+                                        <span class="payment-pay-amount">
+                                            ₹0
+                                        </span>
                                         Now
+
                                     </button>
 
                                 </form>
 
                                 <p class="payment-note">
-                                    Your payment information is secure and
-                                    protected.
+                                    Your payment information is secure.
                                 </p>
 
                             </div>
+
                         </div>
+
                     </div>
+
+                    <!-- Order Summary -->
 
                     <div class="payment-right">
 
-                        <h2 class="order-heading">Order Summary</h2>
+                        <h2 class="order-heading">
+                            Order Summary
+                        </h2>
 
                         <div class="order-card">
 
                             <div id="orderProductList"></div>
 
                             <div class="order-details">
+
                                 <div>
                                     <span>Sub Total</span>
-                                    <span class="payment-subtotal">₹0</span>
+                                    <span class="payment-subtotal">
+                                        ₹0
+                                    </span>
                                 </div>
 
                                 <div>
@@ -195,18 +240,24 @@
 
                                 <div class="order-total">
                                     <span>Total</span>
-                                    <span class="payment-total">₹0</span>
+                                    <span class="payment-total">
+                                        ₹0
+                                    </span>
                                 </div>
+
                             </div>
 
                         </div>
+
                     </div>
 
                 </div>
+
             </section>
 
         </main>
 
         <script src="script.js"></script>
+
     </body>
 </html>
